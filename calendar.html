@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<meta name="mobile-web-app-capable" content="yes">
+		<title>This is the title</title>
+	</head>
+	<body>
+		<h1 id="day" />
+		<h3 id="data" />
+		<script type="text/javascript">
+			const dayEl = document.getElementById('day');
+			const dataEl = document.getElementById('data');
+			let tracker = 1;
+			setInterval(function() {
+				const currentTime = new Date();
+				let dayString;
+				switch(currentTime.getDay()){
+					case 0:
+						dayString = "Sunday";
+						break;
+					case 1:
+						dayString = "Monday";
+						break;
+					case 2:
+						dayString = "Tuesday";
+						break;
+					case 3:
+						dayString = "Wednesday";
+						break;
+					case 4:
+						dayString = "Thursday";
+						break;
+					case 5:
+						dayString = "Friday";
+						break;
+					case 6:
+						dayString = "שבּת";
+						break;
+
+				}
+				dayEl.innerHTML = dayString;
+				dataEl.innerHTML = `Iteration number ${tracker+=1}`;
+			}, 1000);
+		</script>
+	</body>
+</html>
